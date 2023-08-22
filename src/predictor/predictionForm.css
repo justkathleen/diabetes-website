@@ -1,0 +1,47 @@
+.form-row {
+    text-align: left;
+}
+
+input[type=text] {
+    height:25px;
+    width:200px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+input[type=number] {
+    height:25px;
+    width:200px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 20px;
+    margin-bottom:10px;
+}
+.label {
+    width:250px;
+    display:inline-block;
+    text-align: left; /* Align labels to the left */
+  }
+
+input {
+    margin-left: 10px;
+}
+
+
+h2 {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 40px;
+    font-weight:bold;
+}
+
+
+
