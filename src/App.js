@@ -3,6 +3,9 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import PredictionForm from './predictor/predictionForm.js';
 import ModelNotRunning  from './predictor/errorPage/modelNotRunning';
+import Navbar from './Navbar';
+import About from './About';
+import {Route, Routes} from 'react-router-dom';
 
 function App() {
   const [isServerRunning, setIsServerRunning] = useState(false);
@@ -26,9 +29,19 @@ function App() {
     }
   };
 
+  // for navbar
+
+
   return (
     <div className="App">
-      {isServerRunning ? <PredictionForm /> : <ModelNotRunning />}
+          <Navbar />
+          <div className="content">
+            <Routes>
+              <Route path="/" element={<About />}></Route>
+              <Route path="/about" element={<About />}></Route>
+              <Route path="/predictor" element={ isServerRunning ? <PredictionForm /> : <ModelNotRunning />}></Route>
+            </Routes>
+          </div>
     </div>
   );
 }
