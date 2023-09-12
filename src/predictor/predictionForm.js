@@ -67,6 +67,7 @@ function PredictionForm()
                 'HbA1c' : HbA1c,
                 'glucose' : glucose
             }
+            /*
             const response = await fetch('http://localhost:5000/prediction', {
                 method: 'POST', 
                 headers: {
@@ -74,12 +75,22 @@ function PredictionForm()
                 },
                 body: JSON.stringify(predictionParameter)
             });
+*/
+
+            const response = await fetch('http://localhost:5000/prediction', {
+                method: "POST",
+                headers: {
+                     "Content-Type": "application/json"
+                },
+                body: JSON.stringify(predictionParameter)
+     });
 
             const data = await response.json();
             console.log(predictionParameter);
             setPrediction(data.prediction);
         } catch(error)
         {
+            console.error("Error:", error.message);
             console.error("error");
         }
     }

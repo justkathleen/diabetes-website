@@ -1,0 +1,30 @@
+.about-container{
+    margin-left:10%;
+    margin-right:10%;
+}
+
+article {
+    margin-bottom: 40px;
+}
+
+.what-text-container {
+    margin-right:2%;
+}
+
+.diabetes-img {
+    max-width: 100%; /* Ensure the image fits within its container */
+    height: auto;
+}
+
+h1 {
+    margin-bottom: 20px; /* Add margin to create space between h1 elements */
+}
+
+p {
+    text-align: justify;
+}
+
+.what-diabetes {
+    display:flex;
+}
+

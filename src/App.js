@@ -16,7 +16,7 @@ function App() {
 
   const checkServerStatus = async () => {
     try {
-      const response = await fetch("http://localhost:5000"); // Replace with your server's URL
+      const response = await fetch("http://127.0.0.1:5000"); // Replace with your server's URL
       if (response.ok) {
         setIsServerRunning(true);
       }
@@ -31,7 +31,7 @@ function App() {
 
   // for navbar
 
-
+/*
   return (
     <div className="App">
           <Navbar />
@@ -42,6 +42,12 @@ function App() {
               <Route path="/predictor" element={ isServerRunning ? <PredictionForm /> : <ModelNotRunning />}></Route>
             </Routes>
           </div>
+    </div>
+  );
+  */
+  return (
+    <div className="App">
+<PredictionForm></PredictionForm>
     </div>
   );
 }
