@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import pickle
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 
 app = Flask(__name__)
@@ -32,8 +32,9 @@ def predict():
     data = [[gender, age, hypertension, heartDisease, smoker, BMI, HbA1c, glucose]]
     result = model.predict(data)
     resultStr = "The model predicted that you might have diabetes. Consult to a doctor for further information" if result == 1 else "The model predicted that you don't have diabetes. Maintain a healthy lifestyle and don't forget to do regular checkup"
+    print("prediction called")
 
-    return jsonify({'prediction': "predict"})
+    return jsonify({'prediction': resultStr})
 
 if __name__ == '__main__':
     app.run(port=5000, debug = True)
